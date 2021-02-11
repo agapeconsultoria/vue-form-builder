@@ -24,10 +24,6 @@
         <GlobalSidebar
                 :formData="formData"
         />
-
-        <hr>
-
-        <p class="copyright-text" v-text="copyrightText"></p>
     </div>
 </template>
 
@@ -64,15 +60,5 @@
                 this.createDefaultData()
             }
         },
-
-        computed: {
-            /**
-             * Copyright Text
-             * @returns {string}
-             */
-            copyrightText() {
-                return MAIN_CONSTANTS.COPYRIGHT
-            }
-        }
     }
 </script>
