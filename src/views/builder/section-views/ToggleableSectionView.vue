@@ -9,14 +9,14 @@
                 </span>
 
                 <!-- headline -->
-                <span v-text="section.headline"
-                      v-show="section.isShowHeadline">
+                <span v-show="section.isShowHeadline">
+                      {{ $t(`canvas.${section.headline}`) }}
                 </span>
 
                 <!-- subheadline -->
                 <small :class="[section.subHeadlineAdditionalClass, 'toggleable-sub-headline']"
-                       v-text="section.subHeadline"
                        v-show="section.isShowHeadline">
+                       {{ $t(`canvas.${section.subHeadline}`) }}
                 </small>
             </h2>
         </div>

@@ -2,7 +2,7 @@
     <div class="add-section-container" :class="styles.COLUMNS.COL12" @click="showOption">
         <p>
             <span v-html="$form.getIcon('addOutline', '32px', '32px', '#000')"></span>
-            <span>Add Section</span>
+            <span>{{ $t('canvas.add_section') }}</span>
         </p>
 
         <div :class="[styles.LIST_GROUP.CONTAINER, 'add-container-list']" v-show="show">
@@ -10,10 +10,11 @@
             <a href="javascript:void(0)"
                :class="styles.LIST_GROUP.SINGLE_ITEM"
                v-for="(sectionInfo, sectionKey) in sectionTypes"
+               :key="sectionKey"
                @click="addNew(sectionKey)">
 
-                <p class="type-headline" v-text="sectionInfo.name"></p>
-                <p class="type-desc" v-text="sectionInfo.description"></p>
+                <p class="type-headline">{{ $t(`canvas.${sectionInfo.name}`) }}</p>
+                <p class="type-desc">{{ $t(`canvas.${sectionInfo.description}`) }}</p>
 
             </a>
 

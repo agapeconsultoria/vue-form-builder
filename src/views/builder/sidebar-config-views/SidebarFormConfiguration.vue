@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar-form-configuration">
-        <h5>Main Form Configuration</h5>
+        <h5>{{ $t('config.main_form_configuration') }}</h5>
 
         <div :class="styles.FORM.FORM_GROUP">
             <label>Form Headline</label>
@@ -53,7 +53,7 @@
                 Save
             </button>
             <button :class="styles.BUTTON.INFO" @click="save(true)">
-                Save & Close
+                {{ $t('buttons.save_and_close') }}                
             </button>
         </div>
     </div>

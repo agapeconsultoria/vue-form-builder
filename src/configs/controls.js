@@ -38,7 +38,7 @@ import DropdownConfigView from "@/views/control-configs/DropdownConfigView";
 
 const CONTROLS = {
     input: {
-        name: "Input Field",
+        name: "input_field",
         description: "Input text single line",
         icon: 'editPencil', // Follow ICON in `icon-facade.js` to see how it works.
 
@@ -47,7 +47,7 @@ const CONTROLS = {
     },
 
     number: {
-        name: "Number Input Field",
+        name: "number_input_field",
         description: "Input text single line - Number Only",
 
         configData: {
@@ -70,7 +70,7 @@ const CONTROLS = {
     },
 
     text: {
-        name: "Text Field",
+        name: "text_field",
         description: "Multiple line text field",
 
         // config data for the input field - it will be merge with the CONTROL_DEFAULT_DATA
@@ -93,7 +93,7 @@ const CONTROLS = {
     // },
 
     date: {
-        name: "Date Picker",
+        name: "date_picker",
         description: "Simple date picker field",
 
         configData: {
@@ -128,7 +128,7 @@ const CONTROLS = {
     // },
 
     dropDown: {
-        name: "Dropdown",
+        name: "dropdown",
         description: "Dropdown select from a list",
 
         configData: {
@@ -151,7 +151,7 @@ const CONTROLS = {
 
 
     checkbox: {
-        name: "Checkbox List",
+        name: "checkbox_list",
         description: "Checkbox list items (Multiple Select)",
 
         configData: {
@@ -172,7 +172,7 @@ const CONTROLS = {
     },
 
     radio: {
-        name: "Radio List",
+        name: "radio_list",
         description: "Radio-Button list items (Single Select)",
 
         configData: {
@@ -189,7 +189,7 @@ const CONTROLS = {
     },
 
     label: {
-        name: "Label",
+        name: "label",
         description: "Simple label text show up in your Form",
         disableValue: true,
         
@@ -207,7 +207,7 @@ const CONTROLS = {
     },
 
     button: {
-        name: "Button",
+        name: "button",
         description: "Simple button for your own purpose",
         disableValidation: true,
         disableValue: true,
@@ -231,7 +231,7 @@ const CONTROLS = {
     },
 
     emptyBlock: {
-        name: "Empty Block",
+        name: "empty_block",
         description: "Empty block to design your section/row.",
         disableValidation: true,
         disableValue: true,
@@ -245,7 +245,7 @@ const CONTROLS = {
     },
 
     textBlock: {
-        name: "Text Block",
+        name: "text_block",
         description: "Block with text only (without any controls)",
         disableValidation: true,
         disableValue: true, // if you provide this, the control field value will not be recorded.

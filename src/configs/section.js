@@ -15,8 +15,8 @@ import RendererToggleableSectionView from "@/views/renderer/section-views/Toggle
 
 const SECTION_TYPES = {
     normal: {
-        name: "Normal Block",
-        description: "Normal block with a headline",
+        name: "normal_block_name",
+        description: "normal_block_description",
         value: 'normal',
 
         rowType: ROW_TYPES.normal,
@@ -25,8 +25,8 @@ const SECTION_TYPES = {
     },
 
     toggleable: {
-        name: "Toggleable Block",
-        description: "Section block with toggle (display/hide) feature",
+        name: "toggleable_block_name",
+        description: "toggleable_block_description",
         value: 'toggleable',
 
         rowType: ROW_TYPES.normal,
@@ -80,8 +80,8 @@ function createNewSection(type, sortOrder = 0) {
     let newSectionData = HELPER.cloneDeep(SECTION_DEFAULT_DATA)
     newSectionData.type = type
     newSectionData.uniqueId = "section-" + HELPER.getUUIDv4()
-    newSectionData.headline = "New Section"
-    newSectionData.subHeadline = "This is the sub-headline of the new section"
+    newSectionData.headline = "Nova Seção"
+    newSectionData.subHeadline = "Este é o subtítulo da nova seção"
     newSectionData.sortOrder = sortOrder
 
     return newSectionData;

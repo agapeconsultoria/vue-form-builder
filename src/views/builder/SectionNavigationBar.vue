@@ -13,12 +13,12 @@
 
             <button :class="styles.BUTTON.INFO" @click="openConfiguration">
                 <span v-html="$form.getIcon('cog')"></span>
-                <span>Configuration</span>
+                <span>{{ $t('buttons.configuration') }}</span>
             </button>
 
             <button :class="styles.BUTTON.DANGER" @click="deleteSection">
                 <span v-html="$form.getIcon('trash')"></span>
-                <span>Delete</span>
+                <span>{{ $t('buttons.delete') }}</span>
             </button>
         </div>
     </div>

@@ -1,8 +1,8 @@
 <template>
     <div class="normal-section">
         <div class="headline-block p5" v-show="section.isShowHeadline">
-            <h2 :class="section.headlineAdditionalClass" v-text="section.headline"></h2>
-            <p :class="section.subHeadlineAdditionalClass" v-text="section.subHeadline"></p>
+            <h2 :class="section.headlineAdditionalClass">{{ section.headline }}</h2>
+            <p :class="section.subHeadlineAdditionalClass">{{ section.subHeadline }}</p>
         </div>
 
         <!--- SHOW CONTROLS WITH SORTABLE --->
@@ -19,7 +19,7 @@
                          :parent-id="section.uniqueId" />
 
             <p v-if="!hasControl">
-                Droppable Zone / Controls will be showed here...
+                {{ $t('canvas.droppable_zone') }}
             </p>
         </draggable>
 
