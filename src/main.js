@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 Vue.use(VueI18n);
 Vue.use(VueFormBuilderPlugin)
 
-const messages = {
+/* const messages = {
   ptBR: {
     canvas: {
       add_section: 'Adicionar Seção',
@@ -54,9 +54,9 @@ const messages = {
 const i18n = new VueI18n({
   locale: 'ptBR',
   messages
-});
+}); */
 
 new Vue({
-  render: h => h(App),
-  i18n
-}).$mount('#app')
+  render: h => h(App)
+/*   i18n
+ */}).$mount('#app')
