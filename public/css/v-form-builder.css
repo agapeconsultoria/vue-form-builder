@@ -305,17 +305,13 @@
     right: 0;
     background-color: #fff;
     overflow-x: hidden;
-    padding-top: 60px;
     transition: 0.5s;
     border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .vue-form-builder .sidebar .close {
     position: absolute;
-    top: 5px;
     left: 15px;
-    font-size: 36px;
-    margin-right: 50px;
     cursor: pointer;
 }
 
