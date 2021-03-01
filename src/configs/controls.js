@@ -2,8 +2,8 @@
  * Supported Controls in Vue-Form-Builder
  * @author Phat Tran
  */
-import {STYLES} from "@/configs/styles";
-import {HELPER} from "@/libraries/helper";
+import { STYLES } from "@/configs/styles";
+import { HELPER } from "@/libraries/helper";
 import {
     DATE_PICKER_RETURN_TYPES, DATE_PICKER_START_DATES,
 
@@ -39,16 +39,17 @@ import DropdownConfigView from "@/views/control-configs/DropdownConfigView";
 const CONTROLS = {
     input: {
         name: "input_field",
-        description: "Input text single line",
-        icon: 'editPencil', // Follow ICON in `icon-facade.js` to see how it works.
-
+        description: "input_field",
+        group: 'data_entry',
+        exampleImage: 'input',
         // component mapping
         fieldComponent: InputControl
     },
 
     number: {
         name: "number_input_field",
-        description: "Input text single line - Number Only",
+        description: "number_input_field",
+        exampleImage: 'number',
 
         configData: {
             isReal: false, // integer or real (float/double)
@@ -71,7 +72,8 @@ const CONTROLS = {
 
     text: {
         name: "text_field",
-        description: "Multiple line text field",
+        description: "text_field",
+        exampleImage: 'text-area',
 
         // config data for the input field - it will be merge with the CONTROL_DEFAULT_DATA
         configData: {
@@ -94,7 +96,190 @@ const CONTROLS = {
 
     date: {
         name: "date_picker",
-        description: "Simple date picker field",
+        description: "date_picker",
+        exampleImage: 'date',
+
+        configData: {
+            format: "DD/MM/YYYY",
+            firstDay: DATE_PICKER_START_DATES.monday.val, // 0 Sunday, 1 Monday,...
+            numberOfMonths: 1, // Number of Month(s) will be shown
+            numberOfColumns: 1, // Number of Column(s) will be shown
+            minDate: null, // min day (less => can't select)
+            maxDate: null,// max day (more => can't select),
+
+            singleMode: true, // date or date-range
+
+            // for date-range
+            minDays: 0, // min-day range
+            maxDays: 0, // max-day range
+
+            returnType: DATE_PICKER_RETURN_TYPES.format.val, // specific return type
+        },
+
+        fieldComponent: DatePickerControl,
+        configComponent: DatePickerConfigView
+    },
+    dropDown: {
+        name: "dropdown",
+        description: "dropdown",
+        group: "list_elements",
+        exampleImage: 'dropdown',
+
+        configData: {
+            dataMode: DROPDOWN_DATA_MODES.list.val, // normal - api
+            multiple: false, // is multiple selection
+
+            /**
+             * @var {ListItem[]} items
+             */
+            items: [], // for normal hard-list
+
+            apiURL: "", // for api-request - must be entered
+            apiTextKey: "text", // <option>TEXT</option>
+            apiValueKey: "value", // <option value=value>...</option>
+        },
+
+        fieldComponent: DropdownControl,
+        configComponent: DropdownConfigView,
+    },
+    checkbox: {
+        name: "checkbox_list",
+        description: "checkbox_list",
+        exampleImage: 'checkbox',
+        configData: {
+            displayMode: RADIO_CHECKBOX_STYLE.line.val, // line by line / next to each others / 2 items per line
+            position: RADIO_CHECKBOX_POSITION.left.val, // POSITION
+
+            /**
+             * @var {ListItem[]} items
+             */
+            items: [], // list-item
+        },
+
+        fieldComponent: RadioCheckboxControl,
+        configComponent: RadioCheckboxConfigView,
+        rendererDefaultData() {
+            return [];
+        },
+    },
+    radio: {
+        name: "radio_list",
+        description: "radio_list",
+        exampleImage: 'radio-button',
+        configData: {
+            displayMode: RADIO_CHECKBOX_STYLE.line.val, // line by line / next to each others / 2 items per line
+            position: RADIO_CHECKBOX_POSITION.left.val, // POSITION
+            /**
+             * @var {ListItem[]} items
+             */
+            items: [], // list-item
+        },
+
+        fieldComponent: RadioCheckboxControl,
+        configComponent: RadioCheckboxConfigView
+    },
+    textBlock: {
+        name: "text_block",
+        description: "text_block",
+        exampleImage: 'text-block',
+        group: "others",
+        disableValidation: true,
+        disableValue: true, // if you provide this, the control field value will not be recorded.
+
+        fieldComponent: TextBlockControl,
+        configComponent: TextBlockConfigView,
+
+        configData: {
+            text: ""
+        }
+    },
+    button: {
+        name: "button",
+        description: "button",
+        exampleImage: 'button',
+
+        disableValidation: true,
+        disableValue: true,
+
+        configData: {
+            buttonClass: STYLES.BUTTON.PRIMARY,
+            buttonType: "button", // submit/reset/button/...
+
+            emitEventCode: "", // like: "BtnClicked/clicked/change"
+            emitEventData: "", // special data to emit to let you know which button is clicked
+
+            // if this is true => validation will be run before the real invoke method
+            isRunValidation: false,
+
+            // Override here in order to not show the Label
+            isShowLabel: false,
+        },
+
+        fieldComponent: ButtonControl,
+        configComponent: ButtonConfigView
+    },
+}
+
+
+const CONTROLS2 = {
+    input: {
+        name: "input_field",
+        description: "input_field",
+        icon: 'editPencil', // Follow ICON in `icon-facade.js` to see how it works.
+
+        // component mapping
+        fieldComponent: InputControl
+    },
+
+    number: {
+        name: "number_input_field",
+        description: "number_input_field",
+
+        configData: {
+            isReal: false, // integer or real (float/double)
+            decimalPlace: 1, // [For Real] 0.xxx?? (x = num of places)
+        },
+
+        fieldComponent: NumberControl,
+        configComponent: NumberConfigView,
+
+        /**
+         * As same like Vue-JS Property Default Data
+         * Specific field need some special data-type/structure, they need to
+         * put the creation in a factory method.
+         * It must return a value.
+         */
+        rendererDefaultData() {
+            return 0;
+        },
+    },
+
+    text: {
+        name: "text_field",
+        description: "text_field",
+
+        // config data for the input field - it will be merge with the CONTROL_DEFAULT_DATA
+        configData: {
+            rows: 3, // numeric
+        },
+
+        // component mapping
+        fieldComponent: TextControl,
+        configComponent: TextConfigView
+    },
+
+    // I would love to support this, but the thing is, many rich editors are too large:
+    // js: 150KB+
+    // css: 30KB+
+    // So 2.0.0 won't have this field.
+    // richText: {
+    //     name: "Rich-Text Field",
+    //     description: "Multiple line text field - Rich Editor (WYSIWYG)",
+    // },
+
+    date: {
+        name: "date_picker",
+        description: "date_picker",
 
         configData: {
             format: "DD/MM/YYYY",
@@ -129,7 +314,7 @@ const CONTROLS = {
 
     dropDown: {
         name: "dropdown",
-        description: "Dropdown select from a list",
+        description: "dropdown",
 
         configData: {
             dataMode: DROPDOWN_DATA_MODES.list.val, // normal - api
@@ -152,7 +337,7 @@ const CONTROLS = {
 
     checkbox: {
         name: "checkbox_list",
-        description: "Checkbox list items (Multiple Select)",
+        description: "checkbox_list",
 
         configData: {
             displayMode: RADIO_CHECKBOX_STYLE.line.val, // line by line / next to each others / 2 items per line
@@ -173,7 +358,7 @@ const CONTROLS = {
 
     radio: {
         name: "radio_list",
-        description: "Radio-Button list items (Single Select)",
+        description: "radio_list",
 
         configData: {
             displayMode: RADIO_CHECKBOX_STYLE.line.val, // line by line / next to each others / 2 items per line
@@ -192,7 +377,7 @@ const CONTROLS = {
         name: "label",
         description: "Simple label text show up in your Form",
         disableValue: true,
-        
+
         configData: {
             forAttribute: null, // `for` for any control? (except the Label)
 
