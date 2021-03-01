@@ -20,21 +20,10 @@
         :control="controls[controlId]"
         :parent-id="section.uniqueId"
       />
-
-      <div class="w-100 row justify-content-center" v-if="!hasControl" 
-      @click="openControlMenu(section.uniqueId)"
-      >
-        <div class="col-md-3 text-right">
-          <img src="../../../assets/svg-images/add-control.svg" alt />
-        </div>
-        <div class="col-md-5 align-self-center">
-          <div class="title">Insira os componentes do formulário</div>
-          <div
-            class="desc"
-          >Para adicionar conteúdo a seu formulário, clique no elemento que deseja no menu ao lado.</div>
-        </div>
-      </div>
+      <AddControlControl :section="section" v-if="!hasControl" />
     </draggable>
+
+    <!-- Add Control -->
   </div>
 </template>
 
@@ -64,24 +53,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.title {
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: -0.015em;
-  text-align: left;
-}
-
-.desc {
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: -0.015em;
-  text-align: left;
-}
-</style>
