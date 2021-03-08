@@ -7,10 +7,12 @@
 import {ARROW_UP_ICON} from "@/libraries/icons/arrow-up.icon";
 import {ARROW_DOWN_ICON} from "@/libraries/icons/arrow-down.icon";
 import {EDIT_PENCIL_ICON} from "@/libraries/icons/edit-pencil.icon";
+import {EDIT_PENCIL_BORDER} from "@/libraries/icons/edit-pencil-border.icon";
 import {COG_ICON} from "@/libraries/icons/cog.icon";
 import {ADD_OUTLINE_ICON} from "@/libraries/icons/add-outline.icon";
 import {CLOSE_ICON} from "@/libraries/icons/close.icon";
 import {TRASH_ICON} from "@/libraries/icons/trash.icon";
+import {TRASH_ICON_CUSTOM} from "@/libraries/icons/trash-custom.icon";
 import {CHEVRON_UP_ICON} from "@/libraries/icons/chevron-up.icon";
 import {CHEVRON_DOWN_ICON} from "@/libraries/icons/chevron-down.icon";
 import {NAVIGATION_MORE_ICON} from "@/libraries/icons/navigation-more.icon";
@@ -22,9 +24,11 @@ const ICONS = {
     arrowUp: ARROW_UP_ICON,
     arrowDown: ARROW_DOWN_ICON,
     editPencil: EDIT_PENCIL_ICON,
+    editPencilBorder: EDIT_PENCIL_BORDER,
     cog: COG_ICON,
     close: CLOSE_ICON,
     trash: TRASH_ICON,
+    trashCustom: TRASH_ICON_CUSTOM,
     chevronUp: CHEVRON_UP_ICON,
     chevronDown: CHEVRON_DOWN_ICON,
     navigationMore: NAVIGATION_MORE_ICON,

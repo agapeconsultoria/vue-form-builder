@@ -57,11 +57,6 @@
     text-align: center;
 }
 
-.vue-form-builder .add-section-container:hover {
-    border-color: #4834d4;
-    cursor: pointer;
-}
-
 .vue-form-builder .add-section-container > p {
     margin: 0;
 }
@@ -85,13 +80,6 @@
 .vue-form-builder .section-container {
     position: relative;
     border: 2px solid transparent;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.vue-form-builder .section-container:hover,
-.vue-form-builder .section-container.active {
-    border: 2px solid #0198fa;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
@@ -186,7 +174,7 @@
 }
 
 .vue-form-builder .control-view:hover {
-    border: 1px solid #bdc3c7;
+    border: 1px dashed #5AAED3;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
@@ -212,7 +200,6 @@
 .vue-form-renderer .control-view-wrapper {
     position: relative;
     margin-top: 10px;
-    padding-left: 0;
 }
 
 .vue-form-builder .control-option-container {
@@ -224,7 +211,7 @@
     display: none;
 }
 
-.vue-form-builder .control-view-wrapper:hover .control-option-container {
+.vue-form-builder .control-view-wrapper:hover .exclude {
     display: block;
     z-index: 2;
 }
@@ -306,7 +293,6 @@
     background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
-    border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .vue-form-builder .sidebar .close {

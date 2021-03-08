@@ -1,5 +1,5 @@
 <template>
-  <div class="add-control-outer" :class="styles.COLUMNS.COL12">
+  <div class="add-control-outer m-0" :class="styles.COLUMNS.COL12">
     <div class="w-100 row justify-content-center m-0" @click="openAddControl">
       <div class="col-md-3 text-right">
         <img src="../../../assets/svg-images/add-control.svg" alt />
@@ -138,5 +138,9 @@ export default {
   line-height: 18px;
   letter-spacing: -0.015em;
   text-align: left;
+}
+
+.add-control-outer {
+  padding: 50px 0 !important;
 }
 </style>

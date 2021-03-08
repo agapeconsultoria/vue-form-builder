@@ -1,18 +1,19 @@
 <template>
   <div class="normal-section">
     <div class="headline-block p5" v-show="section.isShowHeadline">
-      <h2 :class="section.headlineAdditionalClass">{{ section.headline }}</h2>
-      <p :class="section.subHeadlineAdditionalClass">{{ section.subHeadline }}</p>
+      <h6 class="header" :class="section.headlineAdditionalClass">{{ section.headline }}</h6>
+      <div class="subheader" :class="section.subHeadlineAdditionalClass">{{ section.subHeadline }}</div>
     </div>
 
     <!--- SHOW CONTROLS WITH SORTABLE --->
     <draggable
       :class="draggableClasses"
-      class="dragAndDrop"
-      ghost-class="ghost"
+      class="dragAndDrop p-0"
+      :style="hasControl ? 'padding-bottom: 50px !important;' : ''"
       :handle="dragControlHandle"
       :list="section.controls"
       :group="dragGroup"
+      @click.native.self="openAddControl(4)"
     >
       <ControlView
         v-for="controlId in section.controls"
@@ -20,7 +21,7 @@
         :control="controls[controlId]"
         :parent-id="section.uniqueId"
       />
-      <AddControlControl :section="section" v-if="!hasControl" />
+      <AddControlControl :section="section" v-show="!hasControl" ref="AddControl" />
     </draggable>
 
     <!-- Add Control -->
@@ -43,13 +44,32 @@ export default {
   mixins: [SECTION_VIEW_MIXINS],
   data: () => ({}),
   methods: {
-    openControlMenu(uniqueId) {
-      this.$formEvent.$emit(
-        EVENT_CONSTANTS.BUILDER.SIDEBAR.OPEN,
-        `add-control-${uniqueId}`
-      );
+    openAddControl() {
+     this.$refs["AddControl"].openAddControl()
     },
   },
 };
 </script>
+
+<style scoped>
+.headline-block .header {
+  font-family: Poppins;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: -0.015em;
+  color: #505050;
+}
+
+.headline-block .subheader {
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  color: #505050;
+}
+</style>
 

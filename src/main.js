@@ -7,14 +7,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueI18n from 'vue-i18n';
-import {VueFormBuilderPlugin} from "@/index";
+import { VueFormBuilderPlugin } from "@/index";
 
 Vue.config.productionTip = false
 
 Vue.use(VueI18n);
 Vue.use(VueFormBuilderPlugin)
 
- const messages = {
+const messages = {
   ptBR: {
     canvas: {
       add_section: 'Adicionar Seção',
@@ -25,21 +25,32 @@ Vue.use(VueFormBuilderPlugin)
       toggleable_block_description: 'Bloco sanfonado com título',
       droppable_zone: 'As zonas / controles para soltar serão mostrados aqui ...'
     },
-    buttons:{
+    buttons: {
       form_configurations: 'Configurações do Formulário',
       save_and_close: 'Salvar & Fechar',
       configuration: 'Editar',
       delete: 'Excluir'
     },
-    config:{
-      main_form_configuration: 'Configurações do Formulário Principal',
+    config: {
+      main_form_configuration: 'Detalhes básicos',
+      name_form: 'Nome do formulário',
+      type_form: 'Tipo de formulário',
+      category_form: 'Categoria do formulário',
+      section_form_configuration: 'Detalhes básicos',
+      name_section: 'Título da seção',
+      subname_section: 'Subtítulo da seção',
+      type_section: 'Tipo de seção para o formulário',
+      show_name_section: 'Mostrar título e subtítulo da seção?'
     },
-    constrolsGroup:{
+    constrolsGroup: {
       data_entry: 'Entrada de dados',
       list_elements: 'Lista de elementos',
       others: 'Outros componentes',
     },
-    controls:{
+    controlsConfig: {
+      basic_details: 'Detalhes Básicos',
+    },
+    controls: {
       input_field: 'Texto curto',
       number_input_field: 'Numérico',
       text_field: 'Texto longo',
@@ -52,7 +63,7 @@ Vue.use(VueFormBuilderPlugin)
       empty_block: 'Empty Block',
       text_block: 'Text Block',
     },
-    controlsDescription:{
+    controlsDescription: {
       input_field: 'Campo para a entrada de dados do tipo texto em uma única linha',
       number_input_field: 'Campo para a entrada de dados do tipo numérico em uma única linha',
       text_field: 'Campo para a entrada de dados do tipo texto em várias linhas ',
@@ -72,7 +83,7 @@ Vue.use(VueFormBuilderPlugin)
 const i18n = new VueI18n({
   locale: 'ptBR',
   messages
-}); 
+});
 
 new Vue({
   render: h => h(App),

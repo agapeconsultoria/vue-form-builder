@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&display=swap");
 /*********************************
 * START GLOBAL PADDING - MARGIN
 **********************************/
@@ -59,10 +59,6 @@
     text-align: center;
 }
 
-.vue-form-builder .add-section-container:hover {
-    border-color: #4834d4;
-    cursor: pointer;
-}
 
 .vue-form-builder .add-section-container > p {
     margin: 0;
@@ -93,9 +89,7 @@
 
 .vue-form-builder .section-container:hover,
 .vue-form-builder .section-container.active {
-    border: 2px solid #0198fa;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    background-color: #e9f4f9;
 }
 
 .vue-form-builder .section-container .section-config {
@@ -187,12 +181,6 @@
     transition: all 0.2s ease-in-out;
 }
 
-.vue-form-builder .control-view:hover {
-    border: 1px solid #bdc3c7;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
 .vue-form-builder .control-view.active {
     border: 1px solid #0198fa;
 }
@@ -210,7 +198,7 @@
     padding: 50px 0;
 }
 
-.normal-section .dragAndDrop{
+.normal-section .dragAndDrop {
     cursor: pointer;
 }
 
@@ -223,7 +211,6 @@
 .vue-form-renderer .control-view-wrapper {
     position: relative;
     margin-top: 10px;
-    padding-left: 0;
 }
 
 .vue-form-builder .control-option-container {
@@ -235,7 +222,7 @@
     display: none;
 }
 
-.vue-form-builder .control-view-wrapper:hover .control-option-container {
+.vue-form-builder .control-view-wrapper:hover .exclude {
     display: block;
     z-index: 2;
 }
@@ -319,7 +306,7 @@
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
-    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border: 2px solid #eeeeee;
 }
 
 .vue-form-builder .sidebar .close {
@@ -946,6 +933,41 @@ html.md-theme-default .vue-form-builder .section-container {
 .open > .md-button.md-warning.dropdown-toggle:hover {
     background-color: #ff9800 !important;
     color: #fff !important;
+}
+
+label.labelInput {
+    font-family: Poppins !important ;
+    font-size: 16px !important ;
+    font-style: normal !important ;
+    font-weight: 400 !important ;
+    line-height: 24px !important ;
+    letter-spacing: -0.015em !important ;
+    color: #505050 !important ;
+}
+
+input.form-control,
+select.form-control {
+    background-color: #f8f8f8 !important;
+    border-radius: 8px !important;
+    height: 45px !important;
+    color: #505050 !important;
+    font-family: Poppins !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: -0.015em !important;
+    border: 0;
+}
+
+h5.subheader {
+    font-family: Poppins !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: -0.015em !important;
+    color: #505050 !important;
 }
 
 html.md-theme-default .vue-form-builder .sidebar {

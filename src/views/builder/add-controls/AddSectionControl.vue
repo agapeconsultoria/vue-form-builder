@@ -157,7 +157,7 @@ export default {
 .cornerRight {
   position: absolute;
   right: 0;
-  margin-right: 8vw;
+  margin-right: 18vw;
   margin-top: -17vh;
   z-index: -1;
 }

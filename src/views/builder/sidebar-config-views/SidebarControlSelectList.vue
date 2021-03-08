@@ -113,4 +113,18 @@ export default {
   letter-spacing: -0.015em;
   color: #505050;
 }
+
+.controlCard:hover {
+  background-color: #9cd2ea;
+  border: 0;
+}
+
+.controlCard:hover .title,
+.controlCard:hover .desc {
+  color: white;
+}
+
+.controlCard:hover .title {
+  font-weight: 600;
+}
 </style>
