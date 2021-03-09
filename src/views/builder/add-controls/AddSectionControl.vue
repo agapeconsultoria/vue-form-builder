@@ -4,7 +4,7 @@
     <span v-html="$form.getIcon('circle')" class="circle"></span>
 
     <div class="row cardSection">
-      <div class="cardSectionTexts col-md-12">
+      <div class="cardSectionTexts col-md-12 row d-flex">
         <div class="pt-3">
           Este espaço se chama
           <b>seção</b>.
@@ -15,7 +15,7 @@
         <div>Para começar, escolha o tipo de seção com a qual deseja trabalhar:</div>
       </div>
 
-      <div class="cardSectionButtons col-md-12 row py-3">
+      <div class="cardSectionButtons col-md-12 row-fluid d-flex py-3">
         <div
           class="button col-3 col-lg-3 col-md-4 col-sm-4 mr-2"
           v-for="(sectionInfo, sectionKey) in sectionTypes"
@@ -155,11 +155,11 @@ export default {
 }
 
 .cornerRight {
-  position: absolute;
-  right: 0;
-  margin-right: 18vw;
-  margin-top: -17vh;
+  position: sticky;
+  margin-right: -15vh;
+  margin-top: -15vh;
   z-index: -1;
+  float: right;
 }
 
 .circle {
