@@ -1,7 +1,7 @@
 <template>
   <div class="container" v-if="listSections.length == 0">
-    <img src="../../../assets/svg-images/corner-left.svg" class="cornerLeft" />
-    <img src="../../../assets/svg-images/circle.svg" class="circle" />
+    <span v-html="$form.getIcon('corner_left')" class="cornerLeft"></span>
+    <span v-html="$form.getIcon('circle')" class="circle"></span>
 
     <div class="row cardSection">
       <div class="cardSectionTexts col-md-12">
@@ -28,8 +28,8 @@
       </div>
     </div>
 
-    <img src="../../../assets/svg-images/people.svg" class="people" />
-    <img src="../../../assets/svg-images/corner-right.svg" class="cornerRight" />
+    <span v-html="$form.getIcon('people')" class="people"></span>
+    <span v-html="$form.getIcon('corner_right')" class="cornerRight"></span>
   </div>
   <div class="text-center addNewSection" @click="addNewSection" v-else>
     <img src="../../../assets/svg-icons/add.svg" class="mr-2" />

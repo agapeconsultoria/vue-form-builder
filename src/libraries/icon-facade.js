@@ -4,19 +4,23 @@
  * @license From Zondicons of Steve Schoger. Thanks very much for the beautiful/lightweight icons
  * @iconHomePage https://www.zondicons.com/
  */
-import {ARROW_UP_ICON} from "@/libraries/icons/arrow-up.icon";
-import {ARROW_DOWN_ICON} from "@/libraries/icons/arrow-down.icon";
-import {EDIT_PENCIL_ICON} from "@/libraries/icons/edit-pencil.icon";
-import {EDIT_PENCIL_BORDER} from "@/libraries/icons/edit-pencil-border.icon";
-import {COG_ICON} from "@/libraries/icons/cog.icon";
-import {ADD_OUTLINE_ICON} from "@/libraries/icons/add-outline.icon";
-import {CLOSE_ICON} from "@/libraries/icons/close.icon";
-import {TRASH_ICON} from "@/libraries/icons/trash.icon";
-import {TRASH_ICON_CUSTOM} from "@/libraries/icons/trash-custom.icon";
-import {CHEVRON_UP_ICON} from "@/libraries/icons/chevron-up.icon";
-import {CHEVRON_DOWN_ICON} from "@/libraries/icons/chevron-down.icon";
-import {NAVIGATION_MORE_ICON} from "@/libraries/icons/navigation-more.icon";
-import {INFORMATION_OUTLINE_ICON} from "@/libraries/icons/information-outline.icon";
+import { ARROW_UP_ICON } from "@/libraries/icons/arrow-up.icon";
+import { ARROW_DOWN_ICON } from "@/libraries/icons/arrow-down.icon";
+import { EDIT_PENCIL_ICON } from "@/libraries/icons/edit-pencil.icon";
+import { EDIT_PENCIL_BORDER } from "@/libraries/icons/edit-pencil-border.icon";
+import { COG_ICON } from "@/libraries/icons/cog.icon";
+import { ADD_OUTLINE_ICON } from "@/libraries/icons/add-outline.icon";
+import { CLOSE_ICON } from "@/libraries/icons/close.icon";
+import { TRASH_ICON } from "@/libraries/icons/trash.icon";
+import { TRASH_ICON_CUSTOM } from "@/libraries/icons/trash-custom.icon";
+import { CHEVRON_UP_ICON } from "@/libraries/icons/chevron-up.icon";
+import { CHEVRON_DOWN_ICON } from "@/libraries/icons/chevron-down.icon";
+import { NAVIGATION_MORE_ICON } from "@/libraries/icons/navigation-more.icon";
+import { INFORMATION_OUTLINE_ICON } from "@/libraries/icons/information-outline.icon";
+import { CORNER_LEFT } from "@/libraries/icons/corner_left.icon";
+import { CORNER_RIGHT } from "@/libraries/icons/corner_right.icon";
+import { PEOPLE } from "@/libraries/icons/people.icon";
+import { CIRCLE } from "@/libraries/icons/circle.icon";
 
 
 const ICONS = {
@@ -32,7 +36,11 @@ const ICONS = {
     chevronUp: CHEVRON_UP_ICON,
     chevronDown: CHEVRON_DOWN_ICON,
     navigationMore: NAVIGATION_MORE_ICON,
-    informationOutline: INFORMATION_OUTLINE_ICON
+    informationOutline: INFORMATION_OUTLINE_ICON,
+    corner_left: CORNER_LEFT,
+    corner_right: CORNER_RIGHT,
+    people: PEOPLE,
+    circle: CIRCLE,
 }
 
 const FormIcon = {
