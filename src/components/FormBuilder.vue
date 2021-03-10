@@ -1,5 +1,7 @@
 <template>
   <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-builder']">
+        <button class="btn btn-success" @click="openFormConfig">Clique Aqui</button>
+
     <!-- top configuration -->
     <FormConfiguration v-model="formData.formConfig" />
 
@@ -34,6 +36,7 @@ import SectionContainer from "@/views/builder/SectionContainer";
 import FormBuilderBusiness from "@/mixins/form-builder-mixins";
 import FormConfiguration from "@/views/builder/FormConfiguration";
 import GlobalSidebar from "@/views/builder/GlobalSidebar";
+import { EVENT_CONSTANTS } from "@/configs/events";
 
 export default {
   name: "FormBuilder",
@@ -42,6 +45,14 @@ export default {
     FormConfiguration,
     SectionContainer,
     AddSectionControl,
+  },
+  methods: {
+    openFormConfig() {
+      this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPEN, {
+        runnerId: "FormConfiguration",
+        title: "CONFIGURAÇÕES DO FORMULÁRIO",
+      });
+    },
   },
   mixins: FormBuilderBusiness,
   data: () => ({
