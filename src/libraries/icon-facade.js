@@ -21,6 +21,18 @@ import { CORNER_LEFT } from "@/libraries/icons/corner_left.icon";
 import { CORNER_RIGHT } from "@/libraries/icons/corner_right.icon";
 import { PEOPLE } from "@/libraries/icons/people.icon";
 import { CIRCLE } from "@/libraries/icons/circle.icon";
+import { ADD_CONTROL } from "@/libraries/icons/add-control.icon";
+import { BUTTON_ICON } from "@/libraries/icons/examples-controls/button.icon";
+import { CHECKBOX_ICON } from "@/libraries/icons/examples-controls/checkbox.icon";
+import { DATE_ICON } from "@/libraries/icons/examples-controls/date.icon";
+import { DROPDOWN_ICON } from "@/libraries/icons/examples-controls/dropdown.icon";
+import { INPUT_ICON } from "@/libraries/icons/examples-controls/input.icon";
+import { RADIO_ICON } from "@/libraries/icons/examples-controls/radio-button.icon";
+import { TEXTAREA_ICON } from "@/libraries/icons/examples-controls/text-area.icon";
+import { TEXTBLOCK_ICON } from "@/libraries/icons/examples-controls/text-block.icon";
+import { NUMBER_ICON } from "@/libraries/icons/examples-controls/number.icon";
+import { ADD_SECTION } from "@/libraries/icons/add-section.icon";
+import { CLOSE_CUSTOM } from "@/libraries/icons/close-custom.icon";
 
 
 const ICONS = {
@@ -41,6 +53,18 @@ const ICONS = {
     corner_right: CORNER_RIGHT,
     people: PEOPLE,
     circle: CIRCLE,
+    add_control: ADD_CONTROL,
+    control_button: BUTTON_ICON,
+    control_checkbox: CHECKBOX_ICON,
+    control_date: DATE_ICON,
+    control_dropdown: DROPDOWN_ICON,
+    control_input: INPUT_ICON,
+    control_textarea: TEXTAREA_ICON,
+    control_radiobutton: RADIO_ICON,
+    control_textblock: TEXTBLOCK_ICON,
+    control_number: NUMBER_ICON,
+    add_section: ADD_SECTION,
+    close_custom: CLOSE_CUSTOM,
 }
 
 const FormIcon = {

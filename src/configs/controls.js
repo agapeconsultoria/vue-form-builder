@@ -41,7 +41,7 @@ const CONTROLS = {
         name: "input_field",
         description: "input_field",
         group: 'data_entry',
-        exampleImage: 'input',
+        exampleImage: 'control_input',
         // component mapping
         fieldComponent: InputControl
     },
@@ -49,7 +49,7 @@ const CONTROLS = {
     number: {
         name: "number_input_field",
         description: "number_input_field",
-        exampleImage: 'number',
+        exampleImage: 'control_number',
 
         configData: {
             isReal: false, // integer or real (float/double)
@@ -73,7 +73,7 @@ const CONTROLS = {
     text: {
         name: "text_field",
         description: "text_field",
-        exampleImage: 'text-area',
+        exampleImage: 'control_textarea',
 
         // config data for the input field - it will be merge with the CONTROL_DEFAULT_DATA
         configData: {
@@ -97,7 +97,7 @@ const CONTROLS = {
     date: {
         name: "date_picker",
         description: "date_picker",
-        exampleImage: 'date',
+        exampleImage: 'control_date',
 
         configData: {
             format: "DD/MM/YYYY",
@@ -123,7 +123,7 @@ const CONTROLS = {
         name: "dropdown",
         description: "dropdown",
         group: "list_elements",
-        exampleImage: 'dropdown',
+        exampleImage: 'control_dropdown',
 
         configData: {
             dataMode: DROPDOWN_DATA_MODES.list.val, // normal - api
@@ -145,7 +145,7 @@ const CONTROLS = {
     checkbox: {
         name: "checkbox_list",
         description: "checkbox_list",
-        exampleImage: 'checkbox',
+        exampleImage: 'control_checkbox',
         configData: {
             displayMode: RADIO_CHECKBOX_STYLE.line.val, // line by line / next to each others / 2 items per line
             position: RADIO_CHECKBOX_POSITION.left.val, // POSITION
@@ -165,7 +165,7 @@ const CONTROLS = {
     radio: {
         name: "radio_list",
         description: "radio_list",
-        exampleImage: 'radio-button',
+        exampleImage: 'control_radiobutton',
         configData: {
             displayMode: RADIO_CHECKBOX_STYLE.line.val, // line by line / next to each others / 2 items per line
             position: RADIO_CHECKBOX_POSITION.left.val, // POSITION
@@ -181,7 +181,7 @@ const CONTROLS = {
     textBlock: {
         name: "text_block",
         description: "text_block",
-        exampleImage: 'text-block',
+        exampleImage: 'control_textblock',
         group: "others",
         disableValidation: true,
         disableValue: true, // if you provide this, the control field value will not be recorded.
@@ -196,7 +196,7 @@ const CONTROLS = {
     button: {
         name: "button",
         description: "button",
-        exampleImage: 'button',
+        exampleImage: 'control_button',
 
         disableValidation: true,
         disableValue: true,

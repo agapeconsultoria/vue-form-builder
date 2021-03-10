@@ -3,11 +3,11 @@
     <div class="buttons">
       <button
         class="btn btn-outline-primary border-primary-2"
-        :class="'disabled'"
         title="Push Down"
         @click="pushDown"
         v-html="$form.getIcon('arrowDown', '16px', '16px', '#5AAED3')"
-        disabled="true"
+        :class="!canDown ? 'disabled' : ''"
+        :disabled="!canDown"
       ></button>
 
       <button
@@ -15,6 +15,8 @@
         title="Push Up"
         @click="pushUp"
         v-html="$form.getIcon('arrowUp', '16px', '16px', '#5AAED3')"
+        :class="!canUp ? 'disabled' : ''"
+        :disabled="!canUp"
       ></button>
 
       <button class="btn btn-custom-primary" @click="openConfiguration">
@@ -45,6 +47,7 @@ export default {
       type: Object,
       required: true,
     },
+    context: { type: Array, default: [] },
   },
   methods: {
     /**
@@ -161,6 +164,27 @@ export default {
       EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED,
       this.configurationOpened
     );
+  },
+
+  computed: {
+    canUp() {
+      if (this.section.sortOrder == 1 || this.context.length == 1) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    canDown() {
+      if (
+        this.context.length == 1 ||
+        this.section.sortOrder ==
+          this.context[this.context.length - 1].sortOrder
+      ) {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
 };
 </script>

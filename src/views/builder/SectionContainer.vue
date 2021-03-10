@@ -1,6 +1,6 @@
 <template>
   <div class="section-container" :class="{'active': isDoingConfiguration}">
-    <SectionNavigationBar :section="section" @active="setActive" />
+    <SectionNavigationBar :section="section" @active="setActive" :context="context" />
 
     <component
       :is="sectionViewComponent"
@@ -23,6 +23,7 @@ export default {
     section: Object,
     rows: Object,
     controls: Object,
+    context: Array,
   },
   data: () => ({
     isDoingConfiguration: false,
@@ -39,7 +40,7 @@ export default {
 
   computed: {
     sectionViewComponent() {
-        console.log(SECTION_TYPES[this.section.type].builderView)
+      console.log(SECTION_TYPES[this.section.type].builderView);
       return SECTION_TYPES[this.section.type].builderView;
     },
   },

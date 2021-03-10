@@ -8,10 +8,8 @@
       <div class="controlCard p-2 mb-2" @click="selectedControl(controlKey)">
         <div class="header">
           <span class="title">{{$t(`controls.${controlInfo.name}`)}}</span>
-          <img
-            :src="require(`@/assets/svg-icons/examples-controls/${controlInfo.exampleImage}.svg`)"
-            class="float-right"
-          />
+          <span v-html="$form.getIcon(controlInfo.exampleImage)" class="float-right"></span>
+
         </div>
         <div class="body">
           <span class="desc">{{$t(`controlsDescription.${controlInfo.description}`)}}</span>
@@ -55,9 +53,6 @@ export default {
     this.controlTypes = CONTROLS;
   },
   methods: {
-    getImageUrl() {
-      return "'@/assets/svg-icons/examples-controls/input.svg'";
-    },
     /**
      * Selected a control => we will generate a new control data then emit it to the section
      * @param controlKey

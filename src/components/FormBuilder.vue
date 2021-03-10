@@ -16,6 +16,7 @@
       :rows="formData.rows"
       :controls="formData.controls"
       :key="sectionData.uniqueId"
+      :context="sortedSections"
     />
 
     <!-- below all -->

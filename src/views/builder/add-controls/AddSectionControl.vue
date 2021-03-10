@@ -32,7 +32,8 @@
     <span v-html="$form.getIcon('corner_right')" class="cornerRight"></span>
   </div>
   <div class="text-center addNewSection" @click="addNewSection" v-else>
-    <img src="../../../assets/svg-icons/add.svg" class="mr-2" />
+    <span v-html="$form.getIcon('add_section')" class="mr-2"></span>
+
     <span>
       <u>Adicionar nova seção</u>
     </span>
@@ -156,7 +157,7 @@ export default {
 
 .cornerRight {
   position: sticky;
-  margin-right: -15vh;
+  margin-right: -10vh;
   margin-top: -15vh;
   z-index: -1;
   float: right;

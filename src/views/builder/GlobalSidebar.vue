@@ -5,8 +5,7 @@
         <span class="title">{{ title }}</span>
       </div>
       <div class="col-md-2">
-        <!--         <span class @click="close" v-html="$form.getIcon('close', '24px', '24px', '#000')"></span>-->
-        <img src="@/assets/svg-icons/close.svg" @click="close" class="closeIcon" />
+        <span v-html="$form.getIcon('close_custom')" @click="close" class="closeIcon"></span>
       </div>
     </div>
 

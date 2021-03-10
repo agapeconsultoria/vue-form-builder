@@ -2,7 +2,7 @@
   <div class="add-control-outer m-0" :class="styles.COLUMNS.COL12">
     <div class="w-100 row justify-content-center m-0" @click="openAddControl">
       <div class="col-md-3 text-right">
-        <img src="../../../assets/svg-images/add-control.svg" alt />
+        <span v-html="$form.getIcon('add_control')"></span>
       </div>
       <div class="col-md-5 align-self-center">
         <div class="title">Insira os componentes do formulário</div>
