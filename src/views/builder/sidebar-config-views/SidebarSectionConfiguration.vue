@@ -80,7 +80,6 @@ export default {
 
   methods:{
       change(){
-          console.log(2)
           this.save(false)
       }
   }

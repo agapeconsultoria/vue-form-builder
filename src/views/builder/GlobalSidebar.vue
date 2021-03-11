@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar container p-0">
+  <div class="sidebar container p-0" v-if="isOpen">
     <div class="row sidebarHeader px-2 py-3">
       <div class="col-md-10 text-center">
         <span class="title">{{ title }}</span>
@@ -28,8 +28,6 @@
 import { EVENT_CONSTANTS } from "@/configs/events";
 import { ALERT_DIALOG } from "@/libraries/alert-dialog";
 
-const SIDEBAR_WIDTH_SIZE = "300px";
-
 export default {
   name: "GlobalSidebar",
   props: {
@@ -57,12 +55,6 @@ export default {
                     return */
         this.close();
       }
-
-      // set size
-      this.$el.style.width = SIDEBAR_WIDTH_SIZE;
-      document.getElementsByTagName(
-        "body"
-      )[0].style.marginRight = SIDEBAR_WIDTH_SIZE;
 
       // turn on flag and notify watcher that sidebar is opened
       // `runnerId` will be sent back in order to make sure other components will touch yours
@@ -101,7 +93,6 @@ export default {
      */
     close() {
       this.$el.style.width = 0;
-      document.getElementsByTagName("body")[0].style.marginRight = 0;
 
       // fire event after closed (if emit == true)
       this.$formEvent.$emit(
@@ -149,6 +140,10 @@ export default {
 </script>
 
 <style scoped>
+.sidebar {
+  width: 300px !important
+}
+
 .sidebarHeader .title {
   font-family: Poppins;
   font-size: 21px;

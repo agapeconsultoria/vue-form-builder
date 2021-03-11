@@ -40,7 +40,6 @@ export default {
 
   computed: {
     sectionViewComponent() {
-      console.log(SECTION_TYPES[this.section.type].builderView);
       return SECTION_TYPES[this.section.type].builderView;
     },
   },

@@ -91,7 +91,6 @@ export default {
 
   methods:{
     change(){
-      console.log('a');
       this.save(false);
     }
   }

@@ -1,31 +1,31 @@
 <template>
-  <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-builder']">
-        <button class="btn btn-success" @click="openFormConfig">Clique Aqui</button>
+  <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-builder']" class="row">
+    <div class="col">
+      <!-- top configuration -->
+      <!-- if you need work in right menu add code: -->
+      <FormConfiguration v-model="formData.formConfig" />
 
-    <!-- top configuration -->
-    <FormConfiguration v-model="formData.formConfig" />
+      <!-- form headline -->
+      <div class="form-headline-container" v-show="formData.formConfig.isShowHeadline">
+        <h1 v-text="formData.formConfig.headline"></h1>
+        <p v-text="formData.formConfig.subHeadline"></p>
+      </div>
 
-    <!-- form headline -->
-    <div class="form-headline-container" v-show="formData.formConfig.isShowHeadline">
-      <h1 v-text="formData.formConfig.headline"></h1>
-      <p v-text="formData.formConfig.subHeadline"></p>
+      <!-- sections of the form -->
+      <SectionContainer
+        v-for="(sectionData) in sortedSections"
+        :section="sectionData"
+        :rows="formData.rows"
+        :controls="formData.controls"
+        :key="sectionData.uniqueId"
+        :context="sortedSections"
+      />
+
+      <!-- below all -->
+      <AddSectionControl @addSectionNotify="addSection" :listSections="sortedSections" />
     </div>
-
-    <!-- sections of the form -->
-    <SectionContainer
-      v-for="(sectionData) in sortedSections"
-      :section="sectionData"
-      :rows="formData.rows"
-      :controls="formData.controls"
-      :key="sectionData.uniqueId"
-      :context="sortedSections"
-    />
-
-    <!-- below all -->
-    <AddSectionControl @addSectionNotify="addSection" :listSections="sortedSections" />
-
     <!-- global stuff -->
-    <GlobalSidebar :formData="formData" />
+    <GlobalSidebar :formData="formData"/>
   </div>
 </template>
 

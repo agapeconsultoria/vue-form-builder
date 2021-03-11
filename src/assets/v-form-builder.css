@@ -298,7 +298,7 @@
 .vue-form-builder .sidebar {
     height: 100%;
     width: 0;
-    position: fixed;
+    position: sticky;
     z-index: 1;
     top: 0;
     right: 0;
