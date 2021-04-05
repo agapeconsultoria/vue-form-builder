@@ -25,7 +25,7 @@
       <AddSectionControl @addSectionNotify="addSection" :listSections="sortedSections" />
     </div>
     <!-- global stuff -->
-    <GlobalSidebar :formData="formData"/>
+    <!-- <GlobalSidebar :formData="formData"/> -->
   </div>
 </template>
 

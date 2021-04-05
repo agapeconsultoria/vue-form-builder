@@ -3,7 +3,7 @@ import FormBuilder from "@/components/FormBuilder";
 import FormRenderer from "@/components/FormRenderer";
 import BaseControlSkeleton from "@/skeletons/controls/BaseControlSkeleton";
 import BaseControlConfigSkeleton from "@/skeletons/controls/BaseControlConfigSkeleton";
-
+import GlobalSidebar from "@/views/builder/GlobalSidebar";
 import '@/assets/v-form-builder.css'
 
 // Create module definition for Vue.use()
@@ -29,6 +29,7 @@ export {
     // Main Component for Node
     FormBuilder,
     FormRenderer,
+    GlobalSidebar,
 
     // For Vue.extend
     BaseControlSkeleton,
